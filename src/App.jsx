@@ -1138,40 +1138,22 @@ export default function App(){
         <div style={{fontWeight:700}}>Composed Text</div>
         <div style={{minHeight:60,border:'2px solid #ccd4df',borderRadius:12,padding:12,fontSize:20,background:'#fff'}}>{composed||"(empty)"}</div>
       </div>
-      <div ref={keyboardRef} style={{display:'grid',gap:8}}>
+      <div ref={keyboardRef} style={{display:'grid',gap:8,justifyItems:'center',maxWidth:760,margin:'0 auto'}}>
         {[['Q','W','E','R','T','Y','U','I','O','P'],['A','S','D','F','G','H','J','K','L'],['Z','X','C','V','B','N','M']].map((row,ridx)=>
-          <div key={ridx} style={{display:'flex',justifyContent:'center',gap:8}}>
+          <div key={ridx} style={{display:'flex',justifyContent:'center',gap:8,flexWrap:'wrap'}}>
             {row.map((k,cidx)=>{
               const active=hoveredKey && hoveredKey.key===k;
               return <button data-key={k} key={k} className={"chip"} onClick={()=>handleKeyPress(k)} style={{minWidth:48,minHeight:56,fontSize:20,background:active?'#ffd54f':'#e9eef7',border: active?'2px solid #ff9800':'0'}}>{k}</button>
             })}
           </div>
         )}
-        <div style={{display:'flex',gap:8,marginTop:8,justifyContent:'center'}}>
+        <div style={{display:'flex',gap:8,marginTop:8,justifyContent:'center',flexWrap:'wrap'}}>
           <button data-key="[SPACE]" className="speak" onClick={()=>handleKeyPress('[SPACE]')}>[SPACE]</button>
           <button data-key="[DELETE]" className="chip" onClick={()=>handleKeyPress('[DELETE]')}>[DELETE]</button>
           <button data-key="[CLEAR]" className="chip" onClick={()=>handleKeyPress('[CLEAR]')}>[CLEAR]</button>
           <button data-key="[SPEAK]" className="speak" onClick={()=>handleKeyPress('[SPEAK]')}>[SPEAK]</button>
           <button data-key="[AI IMPROVE]" className="chip" onClick={()=>handleKeyPress('[AI IMPROVE]')}>[AI IMPROVE]</button>
         </div>
-      </div>
-      <div style={{display:'grid',gap:8}}>
-        {/* keyboard rows */}
-        {[['Q','W','E','R','T','Y','U','I','O','P'],['A','S','D','F','G','H','J','K','L'],['Z','X','C','V','B','N','M']].map((row,ridx)=>
-          <div key={ridx} style={{display:'flex',justifyContent:'center',gap:8}}>
-            {row.map((k,cidx)=>{
-              const active=hoveredKey && hoveredKey.row===ridx && hoveredKey.col===cidx;
-              return <button key={k} className={"chip"} onClick={()=>handleKeyPress(k)} style={{minWidth:48,minHeight:56,fontSize:20,background:active?'#ffd54f':'#e9eef7',border: active?'2px solid #ff9800':'0'}}>{k}</button>
-            })}
-          </div>
-        )}
-      </div>
-      <div style={{display:'flex',gap:8,marginTop:8,justifyContent:'center'}}>
-        <button className="speak" onClick={()=>handleKeyPress('[SPACE]')}>[SPACE]</button>
-        <button className="chip" onClick={()=>handleKeyPress('[DELETE]')}>[DELETE]</button>
-        <button className="chip" onClick={()=>handleKeyPress('[CLEAR]')}>[CLEAR]</button>
-        <button className="speak" onClick={()=>handleKeyPress('[SPEAK]')}>[SPEAK]</button>
-        <button className="chip" onClick={()=>handleKeyPress('[AI IMPROVE]')}>[AI IMPROVE]</button>
       </div>
       <div style={{marginTop:10,fontSize:14}}>
         <strong>Gaze:</strong> {gazeOn? 'ON':'OFF'} • <strong>Camera:</strong> {videoRef.current?.srcObject? 'CONNECTED':'DISCONNECTED'} • <strong>Face:</strong> {faceDetected? 'DETECTED':'NOT DETECTED'}
