@@ -1,0 +1,42 @@
+# Node / frontend
+node_modules/
+dist/
+build/
+.vite/
+
+# Python / backend
+venv/
+.env/
+.venv/
+backend/venv/
+backend/.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment files
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Secrets / certificates
+*.key
+*.pem
+*.crt
+*.cer
+
+# API keys and local secrets
+secrets.*
+*.secret
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# Build output
+coverage/
+*.log

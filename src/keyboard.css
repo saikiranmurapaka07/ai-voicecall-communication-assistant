@@ -1,0 +1,6 @@
+/* Virtual keyboard styles */
+.keyboard-row{display:flex;justify-content:center;gap:8px;margin-bottom:6px}
+.keyboard-key{min-width:48px;min-height:56px;font-size:20px;border-radius:8px;background:#e9eef7;border:0;cursor:pointer}
+.keyboard-key.active{background:#ffd54f;border:2px solid #ff9800}
+.composed-display{min-height:60;border:2px solid #ccd4df;border-radius:12px;padding:12px;font-size:20;background:#fff}
+.speak{min-width:120px}
