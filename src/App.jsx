@@ -3,7 +3,7 @@ import {Peer} from "peerjs";
 import {FaceLandmarker, FilesetResolver} from "@mediapipe/tasks-vision";
 import "./keyboard.css";
 
-const API="http://192.168.1.5:8000";
+const API="https://ai-voicecall-communication-assistant.onrender.com";
 const PHRASES=["Hello","Yes","No","I need help","Please wait","I am feeling sick","I want to go home","Thank you"];
 const MODES=["Normal","Calm","Polite","Urgent","Professional"];
 
